@@ -11,15 +11,15 @@ class LRU_cache
     deque<int>::iterator it; 
     public:
         LRU_cache(int);
-        void display();
-        void refer(int);
+        auto display();
+        auto refer(int);
 
 };
 
 LRU_cache::LRU_cache(int n){
     csize = n;
 };
-void LRU_cache::display(){
+auto LRU_cache::display(){
 
     for(it=cache.begin(); it!=cache.end();++it){
         cout << "\t" << *it;
@@ -27,7 +27,7 @@ void LRU_cache::display(){
     cout << "\n";
 };
 
-void LRU_cache::refer(int n){
+auto LRU_cache::refer(int n){
     it = find(cache.begin(), cache.end(), n);
 
     // found
